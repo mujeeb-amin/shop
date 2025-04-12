@@ -1,3 +1,3 @@
 # Shop
 Django Project.
-Testing
+Testing.

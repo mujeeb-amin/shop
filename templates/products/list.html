@@ -26,7 +26,20 @@
     </div>
   </div>
 </nav>
-    <h2 class="text-center">Welcome to the Awesome Shop</h2>
+    
+    <div  class="d-flex justify-content-evenly flex-wrap">
+        {% for product in products %} 
+        <div class="card m-3" style="min-width: 18rem;"> 
+            <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+      <h5 class="card-title">Title: {{product.title}}</h5>
+      <p class="card-text">Price: {{product.price}}AFN</p>
+      <p class="card-text">Is Published: {{product.is_published}}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div> 
+    </div>
+    {% endfor %}
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 </html>

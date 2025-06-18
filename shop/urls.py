@@ -19,6 +19,11 @@ from django.contrib import admin
 from django.urls import path
 
 from dashboard.views import home
+from products.views import get_products
 
 
-urlpatterns = [path("admin/", admin.site.urls), path("", home)]
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", home),
+    path("products/", get_products),
+]

@@ -6,7 +6,7 @@
   <div class="card m-3" style="min-width: 18rem;"> 
     <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
-     <a href="/products/{{product.id}}"> <h5 class="card-title">Title: {{product.title}}</h5></a>
+     <a href="{% url 'products:product_get' product_id=product.id  %}"> <h5 class="card-title">Title: {{product.title}}</h5></a>
       <p class="card-text">Price: {{product.price}}AFN</p>
       <p class="card-text">Is Published: {{product.is_published}}</p>
       <a href="#" class="btn btn-primary">Go somewhere</a>

@@ -17,10 +17,12 @@ Including another URLconf
 
 from django.urls import path
 
-from products.views import get_products, get_product
+from products.views import get_products, get_product, create_product
 
+app_name = "products"
 
 urlpatterns = [
-    path("", get_products),  # /products/
-    path("<int:product_id>/", get_product),  # /products/4
+    path("", get_products, name="product_list"),  # /products/
+    path("<int:product_id>/", get_product, name="product_get"),  # /products/4
+    path("create/", create_product, name="product_create"),  # /products/
 ]

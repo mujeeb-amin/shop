@@ -1,15 +1,20 @@
 {% extends 'base.html' %}
     
 {% block content %}
+<div class="d-flex justify-content-center">
+  <a class="btn btn-primary" href="{% url 'products:product_create' %}">Create Product</a>
+</div>
+
 <div  class="d-flex justify-content-evenly flex-wrap">
-  {% for product in products %} 
+  {% for product in products %}
   <div class="card m-3" style="min-width: 18rem;"> 
     <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
      <a href="{% url 'products:product_get' product_id=product.id  %}"> <h5 class="card-title">Title: {{product.title}}</h5></a>
       <p class="card-text">Price: {{product.price}}AFN</p>
       <p class="card-text">Is Published: {{product.is_published}}</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <a href="{% url 'products:product_update' product_id=product.id %}" class="btn btn-primary">Update</a>
+      <a href="{% url 'products:product_delete' product_id=product.id %}" class="btn btn-danger">Delete</a>
     </div> 
   </div>
   {% endfor %}
